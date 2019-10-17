@@ -88,7 +88,7 @@ public class DateUtil{
 	}
 	/**
 	 * 특정 날짜에서 특정 일수만큼 건너 뛴 날짜 정보 반환
-	 * 2019. 10. 17., dhstoalfh9509@xtock.io
+	 * 2019. 10. 17., dhstoalfh9509@gmail.com
 	 * @param date 특정 날짜
 	 * @param days 이동할 날짜 수
 	 * @return 특정 날짜에서 days만큼 건너 뛴 날짜 정보
