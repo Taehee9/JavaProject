@@ -83,7 +83,7 @@ public class DateUtil{
 		// 현재 날짜 구하기
 		calendar.setTime(new Date());
 		// 현재 날짜에 days만큼 건너 뛴 날짜
-		calendar.add(calendar.DATE, days);
+		calendar.add(Calendar.DATE, days);
 		return calendar.getTime();
 	}
 	/**
@@ -99,7 +99,7 @@ public class DateUtil{
 		// 특정 날짜로 세팅
 		calendar.setTime(date);
 		// 특정 날짜에서 days만큼 건너 뛴 날짜
-		calendar.add(calendar.DATE, days);
+		calendar.add(Calendar.DATE, days);
 		return calendar.getTime();
 	}
 	
