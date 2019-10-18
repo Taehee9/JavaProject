@@ -7,6 +7,7 @@
  */
 package util;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -26,6 +27,9 @@ public class DateUtil{
 	 * @return 현재 일자를 format 형식으로 변경한 문자열
 	 */
 	public static String currentDate(String format){
+		// **** 참고 ****
+		// foramt을 HH로 하면 24시 체계, hh로 하면 12시 체계
+		
 		// format이 비어있을 때
 		if("".equals(format) || format == null){
 			format = "yyyy년 MM월 dd일 E요일 HH:mm:ss";
@@ -84,6 +88,7 @@ public class DateUtil{
 		calendar.setTime(new Date());
 		// 현재 날짜에 days만큼 건너 뛴 날짜
 		calendar.add(Calendar.DATE, days);
+		
 		return calendar.getTime();
 	}
 	/**
@@ -100,10 +105,73 @@ public class DateUtil{
 		calendar.setTime(date);
 		// 특정 날짜에서 days만큼 건너 뛴 날짜
 		calendar.add(Calendar.DATE, days);
+		
 		return calendar.getTime();
+	}
+	/**
+	 * 종료 날짜 - 시작 날짜의 차를 "hh mm ss"형식의 int[]으로 반환
+	 * 시작, 종료 날짜의 string 형식은 "yyyy-MM-dd HH:mm:ss" 형태로 입력
+	 * 2019. 10. 18., dhstoalfh9509@gmail.com
+	 * @param start String 형식의 시작날짜
+	 * @param end String 형식의 끝나는 날짜
+	 * @param format start와 end를 입력하는 날짜의 포맷
+	 * @return 종료 날짜 - 시작 날짜의 차이를 hh mm ss 형식의 int 배열
+	 */
+	public static int[] elapsedTime(String start, String end, String format){
+		// hh mm ss 형식의 int 배열
+		int[] result = new int[3];
+		
+		// string 형식의 시작 날짜를 long 형식으로
+		long startDate = StringToLong(format, start);
+		// string 형식의 종료 날짜를 long 형식으로
+		long endDate = StringToLong(format, end);
+		
+		// 종료날짜 - 시작날짜
+		long elapsedTime = endDate - startDate;
+		// 초 단위의 시간
+		elapsedTime /= 1000;
+		// 분 단위의 시간
+		long gap = elapsedTime / 60;
+		
+		// 시, 분, 초
+		result[0] = (int)gap / 60; //시
+		result[1] = (int)gap % 60; //분
+		result[2] = (int)(elapsedTime - ((result[0]*60 * 60) + (result[1] * 60))); //초
+		
+		return result;
+	}
+	/**
+	 * 특정 format으로 된 string 형식의 날짜를 long 타입으로 변환
+	 * 2019. 10. 18., dhstoalfh9509@gmail.com
+	 * @param format 날짜의 포맷
+	 * @param date string 타입의 날짜
+	 * @return string 형태를 long으로 변환한 날짜
+	 */
+	public static long StringToLong(String format, String date){
+		// string -> date -> long 타입 순으로 변환해야하므로 stringToDate 함수 이용
+		return StringToDate(format,date).getTime();
+	}
+	/**
+	 * 특정 format으로 된 string 형식의 날짜를 date 타입으로 변환
+	 * 2019. 10. 18., dhstoalfh9509@gmail.com
+	 * @param format 날짜의 포맷
+	 * @param date string 타입의 날짜
+	 * @return string 형태를 date로 변환한 날짜
+	 */
+	public static Date StringToDate(String format, String date){
+		Date result = null;
+		try {
+			result = new SimpleDateFormat(format).parse(date);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	public static void main(String...args){
-		System.out.println(getFormatDate(null,getDateFromDate(new Date(86400000),428)));
+		for(int i=0; i<3; i++){			
+			System.out.println(elapsedTime("2019-10-18 12:30:30", "2019-10-18 14:31:35", "yyyy-MM-dd HH:mm:ss")[i]);
+		}
 	}
 }
