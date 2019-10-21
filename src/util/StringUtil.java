@@ -10,7 +10,7 @@ package util;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * StringUtil 메소드 사용
+ * StringUtils 메소드 사용
  * @author Taehee Kwon, dhstoalfh9509@gmail.com, 2019
  * @since  2019. 10. 21.
  */
