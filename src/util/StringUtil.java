@@ -79,5 +79,9 @@ public class StringUtil{
 		// 앞 뒤 공백 제거
 		compareS = " he llo ";
 		System.out.println("앞뒤 공백제거 - " + compareS + " : " + compareS.trim());
+		// 숫자만 있는지 체크
+		defaultS = "123";
+		compareS = "123hello";
+		System.out.println("숫자 체크 - " + defaultS + " / " + compareS + " : " + StringUtils.isNumeric(defaultS) + " / " + StringUtils.isNumeric(compareS));
 	}
 }
