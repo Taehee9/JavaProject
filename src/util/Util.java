@@ -53,7 +53,6 @@ public class Util {
 	public static boolean isEmptyOrWhiteSpace(String s){
 		return isEmpty(s) || isWhiteSpace(s);
 	}
-	
 	public static void main(String... args) {
 		String s = "ㄴㄴ   ";
 		System.out.println(isEmpty(s));

@@ -254,11 +254,24 @@ public class CalculateUtil {
 		}
 		return result;
 	}
+	/**
+	 * 두 숫자 비교
+	 * 2019. 10. 25., dhstoalfh9509@gmail.com
+	 * @param first 비교 할 첫 번째 수
+	 * @param second 비교 할 두 번째 수
+	 * @return 비교값 = 0 : 같다
+	 * 					1 : first가 second보다 크다
+	 * 					-1 : first가 second보다 작다
+	 */
+	public static int compareTo(String first, String second){
+		return getDecimal(first).compareTo(getDecimal(second));
+	}
 	
 	// https://cofs.tistory.com/339
 	public static void main(String...args){
 		System.out.println(addCommaString(moveDecimalPoint(subtract("98765.12345678", "1234"))));
 		System.out.println(negate(getDecimal("-123.456")));
 		System.out.println(getPercentValue("12345","12"));
+		System.out.println(compareTo("2345", "123"));
 	}
 }
