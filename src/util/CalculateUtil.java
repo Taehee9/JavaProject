@@ -31,6 +31,17 @@ public class CalculateUtil {
 		HALF_UP,
 		HALF_DOWN
 	}
+	/**
+	 * string 변환 타입
+	 * DEFAULT = 그냥 string, PLAIN = 지수표현 없는 string, ENGINEERING = 지수표현 있는 string
+	 * @author Taehee Kwon, dhstoalfh9509@gmail.com, 2019
+	 * @since  2019. 10. 28.
+	 */
+	public enum stringType{
+		DEFAULT,
+		PLAIN,
+		ENGINEERING
+	}
 	
 	/**
 	 * 콤마 여부 확인 후 콤마가 있으면 제거
@@ -266,12 +277,25 @@ public class CalculateUtil {
 	public static int compareTo(String first, String second){
 		return getDecimal(first).compareTo(getDecimal(second));
 	}
+	public static String changeToString(stringType type, String num){
+		String result = null;
+		if(type == stringType.DEFAULT){
+			result = new BigDecimal(num).toString();
+		} else if(type == stringType.PLAIN){
+			result = new BigDecimal(num).toPlainString();
+		} else if(type == stringType.ENGINEERING){
+			result = new BigDecimal(num).toEngineeringString();
+		}
+		return result;
+	}
 	
-	// https://cofs.tistory.com/339
 	public static void main(String...args){
 		System.out.println(addCommaString(moveDecimalPoint(subtract("98765.12345678", "1234"))));
 		System.out.println(negate(getDecimal("-123.456")));
 		System.out.println(getPercentValue("12345","12"));
 		System.out.println(compareTo("2345", "123"));
+		System.out.println(changeToString(stringType.DEFAULT, "2.564E6"));
+		System.out.println(changeToString(stringType.PLAIN, "2.564E6"));
+		System.out.println(changeToString(stringType.ENGINEERING, "2.564E6"));
 	}
 }
