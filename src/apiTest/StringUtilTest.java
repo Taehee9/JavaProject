@@ -1,21 +1,20 @@
 /*
- * StringUtil.java
+ * StringUtilTest.java
  * 
  * Author : taehee Kwon
  * Date : 2019. 10. 21
  * Contact : dhstoalfh9509@gmail.com
  */
-package util;
+package apiTest;
 
 import org.apache.commons.lang3.StringUtils;
 
-
 /**
- * StringUtils 메소드 사용
+ * StringUtils API TEST
  * @author Taehee Kwon, dhstoalfh9509@gmail.com, 2019
  * @since  2019. 10. 21.
  */
-public class StringUtil{
+public class StringUtilTest{
 	/**
 	 * StringUtils에서 null에 관련된 것들
 	 * 2019. 10. 25., dhstoalfh9509@gmail.com
