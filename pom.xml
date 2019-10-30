@@ -5,11 +5,17 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <dependencies>
-  	<!-- apache lang3 = StringUtils 사용하기 위함 -->
+  	<!-- apache lang3 -->
   	<dependency>
   		<groupId>org.apache.commons</groupId>
   		<artifactId>commons-lang3</artifactId>
   		<version>3.8</version>
+  	</dependency>
+  	<!--  jsoup html parser library -->
+  	<dependency>
+  		<groupId>org.jsoup</groupId>
+  		<artifactId>jsoup</artifactId>
+  		<version>1.11.2</version>
   	</dependency>
   </dependencies>
   

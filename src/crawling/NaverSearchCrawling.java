@@ -1,11 +1,23 @@
-package naver;
+/*
+ * NaverSearchCrawling.java
+ * 
+ * Author : taehee Kwon
+ * Date : 2019. 10. 29
+ * Contact : dhstoalfh9509@gmail.com
+ */
+package crawling;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class NaverSearchData {
+/**
+ * HttpURLConnection 이용한 네이버 실시간 검색어 크롤링 방법
+ * @author Taehee Kwon, dhstoalfh9509@gmail.com, 2019
+ * @since  2019. 10. 30.
+ */
+public class NaverSearchCrawling {
 
 	public static void main(String...args){
 		try {
