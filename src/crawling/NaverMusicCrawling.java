@@ -29,8 +29,8 @@ public class NaverMusicCrawling {
 			// doc.toString() = doc.html()은 html을 string 형식으로 나옴 
 			// doc.text()는 그 안에 text들을 출력함(네이버 뮤직 메인메뉴 바로가기 이런식)
 			Document doc = Jsoup.connect(url).get();
-			// select을 이용해 일간 top 100 리스트 선택
-			Elements element = doc.select("div.tc_selected table.home_top100");
+			// select을 이용해 일간 top 100 리스트 선택(첫 번째가 일간)
+			Element element = doc.select("table.home_top100").first();
 			
 			System.out.println("==============================================================================================================");
 			

@@ -41,7 +41,6 @@ public class NaverSearchCrawling {
 			br.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			// TODO: handle exception
 		}
 	}
 }
