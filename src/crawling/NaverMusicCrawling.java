@@ -13,7 +13,6 @@ import java.util.Iterator;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 /**
  * Jsoup 이용한 네이버 뮤직 크롤링 방법
