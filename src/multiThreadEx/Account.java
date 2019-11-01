@@ -9,7 +9,7 @@ package multiThreadEx;
 
 /**
  * MultiThread를 이용한 예제
- * 계좌(입출금)
+ * 계좌(출금)
  * 
  * @author Taehee Kwon, dhstoalfh9509@gmail.com, 2019
  * @since  2019. 10. 31.
@@ -20,7 +20,6 @@ public class Account {
 	public void withdraw(long withdrawAmount){
 		if(balance >= withdrawAmount){
 			try {
-				Thread.sleep(1000);
 				balance -= withdrawAmount;
 			} catch (Exception e) {
 				e.printStackTrace();
