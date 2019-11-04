@@ -17,8 +17,13 @@
   		<artifactId>jsoup</artifactId>
   		<version>1.11.2</version>
   	</dependency>
+	<!-- Java mail API -->
+  	<dependency>
+  		<groupId>javax.mail</groupId>
+  		<artifactId>mail</artifactId>
+  		<version>1.4.5</version>
+  	</dependency>
   </dependencies>
-  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
