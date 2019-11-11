@@ -277,13 +277,23 @@ public class CalculateUtil {
 	public static int compareTo(String first, String second){
 		return getDecimal(first).compareTo(getDecimal(second));
 	}
+	/**
+	 * 들어온 문자열을 지수로 반환 / 지수 표현 없는 형태로 반환
+	 * 2019. 11. 11., dhstoalfh9509@gmail.com
+	 * @param type 지수 표현 여부
+	 * @param num 숫자
+	 * @return 숫자
+	 */
 	public static String changeToString(stringType type, String num){
 		String result = null;
 		if(type == stringType.DEFAULT){
+		// 전달받은 값 그대로 반환
 			result = new BigDecimal(num).toString();
 		} else if(type == stringType.PLAIN){
+		// 지수 표현 없는 형태로 반환
 			result = new BigDecimal(num).toPlainString();
 		} else if(type == stringType.ENGINEERING){
+		// 지수 표현이 있으면 지수로 반환
 			result = new BigDecimal(num).toEngineeringString();
 		}
 		return result;
