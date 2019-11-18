@@ -16,12 +16,18 @@ import java.io.IOException;
  * @since  2019. 11. 11.
  */
 public class ExceptionTest {
-	public static void main(String...args) throws IOException{
+	public static void main(String...args) throws FileNotFoundException, IOException {
 		try {
 			// throws IOException 없어도 진행 가능 / try catch 로 쌓여져 있으니까
 			exceptionTest(-5);
 			// 위에서 에러났으므로 -10의 경우 진행 x
 			exceptionTest(-10);
+		} catch(FileNotFoundException e) {
+			System.out.println("getCause " + e.getCause());
+			System.out.println("getMessage " + e.getMessage());
+			System.out.println("getLocalizedMessage " + e.getLocalizedMessage());
+			System.out.println("print ");
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
