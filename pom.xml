@@ -26,7 +26,7 @@
   	<!-- 자바 암호 라이브러리  https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15 -->
 	<dependency>
 	    <groupId>org.bouncycastle</groupId>
-	    <artifactId>bcprov-jdk15</artifactId>
+	    <artifactId>bcprov-jdk16</artifactId>
 	    <version>1.46</version>
 	</dependency>
   </dependencies>
